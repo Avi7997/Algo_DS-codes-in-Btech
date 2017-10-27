@@ -1,0 +1,51 @@
+#include<stdio.h>
+int main()
+{
+long long int stnf=0,q,avp,n,m,i,j,k[500000]={0},avi[500],temp2,temp1,l=0,tp1,tp2;
+scanf("%lld %lld",&n,&m);
+printf("\n");
+for(i=0;i<n;i++)
+    {
+    scanf("%lld",&avi[i]);
+    printf("\n");
+    }
+    for(i=0;i<n-1;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+           tp1=avi[i];
+           tp2=avi[j];
+            for(q=1;tp1>0;q++)
+            {
+                temp1=tp1%10;
+                temp2=tp2%10;
+                if(temp1==1||temp2==1)
+                {
+                k[l]++;
+                }
+                tp1=tp1/10;
+                tp2=tp2/10;
+            }
+            l++;
+        }
+    }
+    for(i=0;i<l;i++)
+    {
+        if(k[0]<k[i])
+        {
+            avp=k[0];
+            k[0]=k[i];
+            k[i]=avp;
+        }
+    }
+    printf("%lld\n",k[0]);
+    for(i=0;i<l;i++)
+    {
+        if(k[i]==k[0])
+        {
+            stnf++;
+        }
+    }
+    printf("%lld",stnf);
+return 0;
+}
