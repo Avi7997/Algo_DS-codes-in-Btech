@@ -54,7 +54,7 @@ int main(){
     int q;
     cin >> q;
     while(q > 0){
-        int n, m, c1, c2;
+        long long int n, m, c1, c2;
         cin >> n >> m >> c1 >> c2;
         Graph g(n);
         for(int i = 0; i < m; i++){
